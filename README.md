@@ -22,6 +22,34 @@ Below is a response to a certain instruction. Write the instruction that the res
 
 ### Preference Training
 For preference training, we use the official [repo](https://github.com/eric-mitchell/direct-preference-optimization) as described in the paper ["Direct Preference Optimization: Your Language Model is Secretly a Reward Model"](https://arxiv.org/abs/2305.18290). We first finetuned the model on our data using SFT. We then train the SFT model using DPO.
+For SFT training, we use the following command.
+```
+python -u train.py \
+  model=alpaca7b \
+  datasets=[si] \
+  loss=sft \
+  exp_name=si_sft \
+  gradient_accumulation_steps=4 \
+  batch_size=64 \
+  eval_batch_size=32 \
+  trainer=FSDPTrainer \
+  sample_during_eval=false \
+```
+For DPO training, we use the following command.
+```
+python -u train.py \
+  model=alpaca7b \
+  model.archive=policy.pt \
+  datasets=[si] loss=dpo \
+  loss.beta=0.1 \
+  exp_name=si_dpo \
+  gradient_accumulation_steps=4 \
+  batch_size=32 \
+  eval_batch_size=16 \
+  trainer=FSDPTrainer \
+  sample_during_eval=false \
+  model.fsdp_policy_mp=bfloat16 \
+```
 
 ## Citation and Contact
 Feel free to contact Taiwei Shi at taiweish@usc.edu, if you have any questions about the paper.
