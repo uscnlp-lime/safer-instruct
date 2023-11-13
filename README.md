@@ -22,6 +22,7 @@ Below is a response to a certain instruction. Write the instruction that the res
 
 ### Preference Training
 For preference training, we use the official [repo](https://github.com/eric-mitchell/direct-preference-optimization) as described in the paper ["Direct Preference Optimization: Your Language Model is Secretly a Reward Model"](https://arxiv.org/abs/2305.18290). We first finetuned the model on our data using SFT. We then train the SFT model using DPO.
+
 For SFT training, we use the following command.
 ```
 python -u train.py \
