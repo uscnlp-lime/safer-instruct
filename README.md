@@ -41,7 +41,8 @@ For DPO training, we use the following command.
 python -u train.py \
   model=alpaca7b \
   model.archive=policy.pt \
-  datasets=[si] loss=dpo \
+  datasets=[si] \
+  loss=dpo \
   loss.beta=0.1 \
   exp_name=si_dpo \
   gradient_accumulation_steps=4 \
