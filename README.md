@@ -1,5 +1,5 @@
 # Safer-Instruct: Aligning Language Models with Automated Preference Data
-This repository contains the data and code implementation for the paper titled ["Safer-Instruct: Aligning Language Models with Automated Preference Data"](https://maksimstw.github.io/papers/23-saferinstruct.pdf).
+This repository contains the data and code implementation for the paper titled ["Safer-Instruct: Aligning Language Models with Automated Preference Data"](https://arxiv.org/abs/2311.08685).
 <img src="img/pipeline.png">
 
 ## Abstract
