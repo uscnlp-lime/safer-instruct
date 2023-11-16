@@ -54,4 +54,17 @@ python -u train.py \
 ```
 
 ## Citation and Contact
+If you find this repository helpful, please cite our paper.
+
+```
+@misc{shi2023saferinstruct,
+      title={Safer-Instruct: Aligning Language Models with Automated Preference Data}, 
+      author={Taiwei Shi and Kai Chen and Jieyu Zhao},
+      year={2023},
+      eprint={2311.08685},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
 Feel free to contact Taiwei Shi at taiweish@usc.edu, if you have any questions about the paper.
