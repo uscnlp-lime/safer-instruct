@@ -1,12 +1,12 @@
 # Safer-Instruct: Aligning Language Models with Automated Preference Data
-This repository contains the data and code implementation for the paper titled ["Safer-Instruct: Aligning Language Models with Automated Preference Data"]([https://arxiv.org/abs/2310.15638v1](https://github.com/uscnlp-lime/safer-instruct/edit/main/README.md)).
+This repository contains the data and code implementation for the paper titled ["Safer-Instruct: Aligning Language Models with Automated Preference Data"](https://arxiv.org/abs/2311.08685).
 <img src="img/pipeline.png">
 
 ## Abstract
 Reinforcement Learning from Human Feedback (RLHF) is a vital strategy for enhancing model safety in language models. However, annotating preference data for RLHF is a resource-intensive and creativity-demanding process, while automatic generation methods face limitations in data diversity and quality. In response, we present Safer-Instruct, a novel pipeline for semi-automatically constructing large-scale preference datasets. Our approach leverages reversed instruction tuning, instruction induction, and expert model evaluation to efficiently generate high-quality preference data without human annotators. We evaluate Safer-Instruct using LLaMA for instruction induction and GPT-4 as an expert model, generating approximately 10K preference samples. Finetuning an Alpaca model on this dataset demonstrates improved harmlessness while maintaining competitive performance on conversation and downstream tasks. Safer-Instruct addresses the challenges in preference data acquisition, advancing the development of safer and more responsible AI systems.
 
 ## Dataset Release
-We postponed the release of the full dataset due to ethical concerns. The Safer-Instruct process can be easily reversed to train a "bad" LLM. In addition, part of our dataset is collected from X and Reddit. Releasing the data might violate their content distribution policy. However, you can download the sample data [here](https://github.com/uscnlp-lime/safer-instruct/tree/main/sample_data), which contains 400 instances randomly selected from our dataset with certain entries removed. The dataset should be used for academic purposes only. To request the full dataset, please contact one of the authors.
+We postponed the release of the full dataset due to ethical concerns. The Safer-Instruct process can be easily reversed to train a harmful LLM. In addition, part of our dataset is collected from X and Reddit. Releasing the data might violate their content distribution policy. However, you can download the sample data [here](https://github.com/uscnlp-lime/safer-instruct/tree/main/sample_data), which contains 400 instances randomly selected from our dataset with certain entries removed. The dataset contains content that can be offensive or upsetting. The dataset should be used for academic purposes only. To request the full dataset, please contact one of the authors.
 
 ## Usage
 ### Reversed Instruction Tuning
@@ -54,4 +54,17 @@ python -u train.py \
 ```
 
 ## Citation and Contact
+If you find this repository helpful, please cite our paper.
+
+```
+@misc{shi2023saferinstruct,
+      title={Safer-Instruct: Aligning Language Models with Automated Preference Data}, 
+      author={Taiwei Shi and Kai Chen and Jieyu Zhao},
+      year={2023},
+      eprint={2311.08685},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
 Feel free to contact Taiwei Shi at taiweish@usc.edu, if you have any questions about the paper.
